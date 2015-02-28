@@ -3,6 +3,13 @@
 \usepackage{eso-pic} % \AddToShipoutPicture
 \usepackage{graphicx} % \includegraphics
 
+%% Change `ku-farve` to `nat-farve` to use SCIENCE's old colors or
+%% `natbio-farve` to use SCIENCE's new colors and logo.
+\def \ColourPDF {include/ku-farve}
+
+%% Change `ku-en` to `nat-en` to use the `Faculty of Science` header
+\def \TitlePDF   {include/ku-en}  % University of Copenhagen
+
 \title{
   \vspace{3cm}
   \Huge{Some Title} \\
@@ -20,13 +27,11 @@
 
 \begin{document}
 
-%% Change `ku-farve` to `nat-farve` to use SCIENCE's old colors or
-%% `natbio-farve` to use SCIENCE's new colors and logo.
-\AddToShipoutPicture*{\put(0,0){\includegraphics*[viewport=0 0 700 600]{include/ku-farve}}}
-\AddToShipoutPicture*{\put(0,602){\includegraphics*[viewport=0 600 700 1600]{include/ku-farve}}}
 
-%% Change `ku-en` to `nat-en` to use the `Faculty of Science` header
-\AddToShipoutPicture*{\put(0,0){\includegraphics*{include/ku-en}}}
+\AddToShipoutPicture*{\put(0,0){\includegraphics*[viewport=0 0 700 600]{\ColourPDF}}}
+\AddToShipoutPicture*{\put(0,602){\includegraphics*[viewport=0 600 700 1600]{\ColourPDF}}}
+
+\AddToShipoutPicture*{\put(0,0){\includegraphics*{\TitlePDF}}}
 
 \clearpage\maketitle
 \thispagestyle{empty}
